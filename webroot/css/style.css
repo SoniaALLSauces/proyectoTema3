@@ -1,0 +1,133 @@
+/*
+Author: Sonia Anton Llanes
+Created on: 29-septiembre-2020
+Last modification: 11-octubre-2020
+CSS Index General Segundo Curso del Módulo Desarrollo de Aplicaciones Web
+*/
+
+
+* { box-sizing: border-box; margin:0px; padding:0px;}
+ul, ol {list-style: none; }
+a{text-decoration: none; color:#000; }
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Tamaño y Posicion de los Elementos con Grid */
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 14% 75% 10%;
+    grid-template-columns:2% 8% auto 2%;
+    grid-template-areas:
+        ". header header ."
+        ". . main ."
+        ". footer footer .";
+}
+
+.header{
+    grid-area: header;
+}
+.menu{
+    grid-area: menu;
+    justify-self: center;
+}
+.main{
+    grid-area: main;
+    place-self: center;
+}
+.footer{
+    grid-area: footer;
+}
+
+
+/* Tamaño y Posicion dentro del elemento*/
+.main section article a{
+    width: 100%;
+}
+.fnav ul li{
+    display: inline-block; 
+    width: 45%;
+}
+@media all and (max-width: 839px){
+    .minMedia{display: inline-block;}
+    .maxMedia{display: none;}
+}
+@media all and (min-width: 840px){
+    .minMedia{display: none;}
+    .maxMedia{display: inline-block;}
+}
+.fnav li img{
+    height: 10vh;
+    width: auto;
+}
+
+/* Border, margin y padding */
+article{
+    margin: 1% 3% 1% 3%;
+    padding: 1% 2% 1% 2%;
+}
+.article{
+    border-bottom: 2px solid #BF2411;
+}
+.footer{
+    border-top: 2px solid #BF2411;
+}
+
+
+/* Estilo background */
+.header{
+    background-image: url("../images/fondo_header.jpg");
+    background-size: 100%;
+    height: 100%;
+}
+
+/* Estilo del texto */
+.h1{
+    text-align: center;
+    line-height: 14vh;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 6vw;
+}
+h2{
+    color: #bb1212;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5vw;
+    font-weight: bolder;
+}
+h3{
+    color: #bb1212;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3vw;
+    font-weight: bolder;
+}
+article{
+    font-family: 'Courgette', cursive;
+    font-size: 2vw;
+}
+.footer{
+    text-align: center;
+}
+.fnav ul li{
+    vertical-align: middle;
+}
+.ftexto{
+    font-weight: bolder;
+}
+@media all and (max-width: 839px){
+    .ftexto{font-size: 2.5vw;}
+}
+@media all and (min-width: 840px){
+    .ftexto{font-size: 2vw;}
+}
+
+
+/* Hover */
+article:hover{
+    background: linear-gradient(90deg, #BF2411, white);
+}
+
+
