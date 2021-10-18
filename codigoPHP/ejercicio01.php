@@ -11,6 +11,9 @@
         <link href="../webroot/images/mariposa_vintage.png" rel="icon" type="image/png">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+        <style>
+            span{color: red;}
+        </style>
     </head>
     <body>
 
@@ -39,10 +42,10 @@
 
                 //Muestro por pantalla con print"..."; :
                 print "<br><h4>Variables mostradas por pantalla con \"print\" : </h4>";
-                print '<p>La variable $vString tiene el valor: <strong>'.$vString."</strong> y es de tipo ".gettype($vString)."</p>";
-                print '<p>La variable $vInt tiene el valor: <strong>'.$vInt."</strong> y es de tipo ".gettype($vInt)."</p>";
-                print '<p>La variable $vFloat tiene el valor: <strong>'.$vFloat."</strong> y es de tipo ".gettype($vFloat)."</p>";
-                print '<p>La variable $vBool tiene el valor: <strong>'.$vBool."</strong> y es de tipo ".gettype($vBool)."</p>";
+                print '<p>La variable $vString tiene el valor: <strong><span>'.$vString."<span></strong> y es de tipo ".gettype($vString)."</p>";
+                print '<p>La variable $vInt tiene el valor: <strong><span>'.$vInt."<span></strong> y es de tipo ".gettype($vInt)."</p>";
+                print '<p>La variable $vFloat tiene el valor: <strong><span>'.$vFloat."<span></strong> y es de tipo ".gettype($vFloat)."</p>";
+                print '<p>La variable $vBool tiene el valor: <strong><span>'.$vBool."<span></strong> y es de tipo ".gettype($vBool)."</p>";
 
                 //Muestro por pantalla con printf("... %s %d %1.1f ",variables); :
                 printf ("<br><h4>Variables mostradas por pantalla con \"printf\" : </h4>");
@@ -66,7 +69,7 @@
                 var_dump ("<p>Variable Booleana: ".$vBool."</p>");
 
                 //Muestro por pantalla con var_export("..."); :
-                var_export("<br><h4>Variables mostradas por pantalla con \"var_dump\" : </h4>");
+                var_export("<br><h4>Variables mostradas por pantalla con \"var_export\" : </h4>");
                 var_export ("<p>Variable String: ".$vString."</p>");
                 var_export ("<p>Variable Int: ".$vInt."</p>");
                 var_export ("<p>Variable Float: ".$vFloat."</p>");
