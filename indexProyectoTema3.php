@@ -27,7 +27,7 @@
 	<main class="main">
             <section>
                 <h2><a href="../proyectoDWES/indexProyectoDWES.php">DWES - Tema 3. Características del Lenguaje PHP</a></h2>
-                <h3>Prácticas del Módulo</h3>            
+                <h3>Prácticas con Variables, Arrays y Formularios</h3>            
                 <table>
                     <tr>
                         <th></th>
@@ -60,14 +60,57 @@
                         <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio04.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
                     </tr>
                     <tr class="tr">
-                        <td class="ejercicio">5. Inicializar y mostrar una variable que tiene una marca de tiempo (timestamp)</td>
+                        <td class="ejercicio">Ejercicio 5. Inicializar y mostrar una variable que tiene una marca de tiempo (timestamp)</td>
                         <td class="tdimg"><a href="codigoPHP/ejercicio05.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
                         <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio05.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
                     </tr>
                     <tr class="tr">
-                        <td class="ejercicio">6. Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días.</td>
+                        <td class="ejercicio">Ejercicio 6. Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días.</td>
                         <td class="tdimg"><a href="codigoPHP/ejercicio06.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
-                        <td class="tdimg"><a href="mostrarcodigo/muestraEjercicio06.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio06.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 7. Mostrar el nombre del fichero que se está ejecutando.</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio07.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio07.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 8. Mostrar la dirección IP del equipo desde el que estás accediendo</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio08.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio08.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 9. Mostrar el path donde se encuentra el fichero que se está ejecutando.</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio09.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio09.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 10. Mostrar el contenido del fichero que se está ejecutando</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio10.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio10.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio" style="color: darkblue">Ejercicio 11. Mostrar el documento PHPDoc del proyecto que se está ejecutando generado con PHP Documentor o ApiGen</td>
+                        <td class="tdimg"><img src="webroot/images/ejecutar.png" alt="ejecutar"></td>
+                        <td class="tdimg"><img src="webroot/images/mostrar.png" alt="mostrar"></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 12. Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach())</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio12.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio12.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 21. Construir un formulario para recoger un cuestionario realizado a una persona y 
+                            enviarlo a una página Tratamiento.php para que muestre las preguntas y las respuestas recogidas</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio21.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio21.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 22. Construir un formulario para recoger un cuestionario realizado a una persona y 
+                            mostrar en la misma página las preguntas y las respuestas recogidas.</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio22.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio22.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
                     </tr>
                     
                     <tr>

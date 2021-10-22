@@ -27,8 +27,9 @@
 
                 //Creando un objeto DateTime:
                 $oFechaHora = new DateTime();
-                $fechaHoraOporto = $oFechaHora -> format ('d-m-Y H:m:s');
-                    /*Donde el formato 'd-m-Y H:m:s' es:
+                $fechaHoraOporto = $oFechaHora -> format ('l, d-m-Y H:i:s');
+                    /*Donde el formato 'l, d-m-Y H:m:s' es:
+                        *     l - día de la semana
                         *     d - número del día del mes con 2 dígitos
                         *     m - número del mes con 2 dígitos
                         *     Y - año con 4 dígitos

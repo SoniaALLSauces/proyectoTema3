@@ -28,30 +28,13 @@
                 date_default_timezone_set("Europe/Madrid"); //Ajustamos la zona horaria a España con la funcion date_default_timezone_set($timezone)
 
                 //Mostrar zona horaria en la que estoy:
-                echo "Zona horaria en la cual me encuentro:  ";
-                echo date_default_timezone_get();
-                
-
+                echo "<p>Zona horaria en la cual me encuentro: <strong>" . date_default_timezone_get() . "</strong></p><br>";
 
                 //Muestro la fecha con las clases date() y time()
                 echo "<h4>Muestro la fecha y hora actual usando la funcion date() y time()</h4>";
-                $fechaActual = date('d-m-Y H:m:s', time());
-                echo $fechaActual;
-                
-                //Creando un objeto DateTime:
-                $oFechaHora = new DateTime();
-                $fechaHoraActual = $oFechaHora -> format ('d-m-Y H:m:s');
-                    /*Donde el formato 'd-m-Y H:m:s' es:
-                         *     d - número del día del mes con 2 dígitos
-                         *     m - número del mes con 2 dígitos
-                         *     Y - año con 4 dígitos
-                         *     H - hora en formato 24H con 2 dígitos
-                         *     i - minutos con 2 dígitos
-                         *     s - segundos con 2 dígitos
-                    */
-                echo "<h4>Usando la clase DateTime</h4>";
-                echo $fechaHoraActual;
-               
+                $fechaActual = date('l, d-m-Y');
+                $horaActual = date('H:i:s', time());
+                echo "<p>Hoy es $fechaActual  y son las $horaActual</p><br>";
                 
                 //Utilizando strftime:
                 echo "<h4>Utilizando strftime: </h4>";
@@ -64,6 +47,28 @@
                             /*Donde: %H - hora en formato 24H con 2 dígitos
                                      %M - minutos con 2 dígitos
                                      %S - segundos con 2 dígitos*/
+                
+                //Creando un objeto DateTime:
+                $oFechaHora = new DateTime();
+                //$oFechaHora = DateTime::createFromFormat('d-m-Y', date('d-m-y'), new DateTimeZone('Europe/Madrid'));
+                $fechaHoraActual = $oFechaHora -> format ('d-m-Y H:i:s');
+                    /*Donde el formato 'l, d-m-Y H:m:s' es:
+                         *     l - día de la semana
+                         *     d - número del día del mes con 2 dígitos
+                         *     m - número del mes con 2 dígitos
+                         *     Y - año con 4 dígitos
+                         *     H - hora en formato 24H con 2 dígitos
+                         *     i - minutos con 2 dígitos
+                         *     s - segundos con 2 dígitos
+                    */
+                echo "<br><h4>Y usando la clase DateTime:</h4>";
+                echo "<p>$fechaHoraActual</p>";
+                echo "<p>Hoy es (día de la semana): " . $oFechaHora -> format ('l') . "</p>";
+                echo "<p>Hoy es dia: " . $oFechaHora -> format ('d') . "</p>";
+                echo "<p>del mes (" . $oFechaHora -> format ('m') . "): " .  $oFechaHora -> format ('F') ."</p>";
+                echo "<p>del año: " . $oFechaHora -> format ('Y') . "</p>";
+                
+                
 
             ?>
         </div>
