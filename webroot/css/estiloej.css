@@ -21,6 +21,29 @@ h2 img{
     width: 4%;
     text-align: left;
 }
+table{
+    width: 90%;
+    margin: 4%;
+}
+td{
+    width: 25%;
+    height: 50px;
+}
+div{margin: 2%;}
+.dato, .error{
+    width: 100%;
+    height: 10px;
+    font-size: small;
+}
+input{
+    width: 100%;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+#submit, #value{
+    border: 1px solid black;
+}
 
 /* Border, Margin y Padding */
 h2, h3{

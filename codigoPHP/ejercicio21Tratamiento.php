@@ -10,4 +10,14 @@
             echo "<p>Tu nombre es: ".$_REQUEST['nombre']."</p>";
             echo "<p>Curso matriculado: ".$_REQUEST['curso']."</p>";
             
+            //$_REQUEST
+                echo "<tr>";
+                    echo "<th><h4>Contenido variable \$_REQUEST </h4></th>";
+                echo "</tr>";
+                echo "<tr> <td>";
+                    echo "<pre>";
+                    print_r($_REQUEST);
+                    echo "</pre";
+                echo "</td> </tr>";
+            
 ?>

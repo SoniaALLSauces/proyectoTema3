@@ -41,6 +41,5 @@
                     <input name="reset" type="reset" value="Borrar"> 
                 </form>
             
-        </div>
     </body>
 </html>
