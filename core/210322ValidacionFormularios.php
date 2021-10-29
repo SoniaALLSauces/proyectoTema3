@@ -256,7 +256,7 @@ class validacionFormularios {  //ELIMINA EL METODO VALIDATEDATE Y LO INCLUYE EN 
         $fechaFormateada = strtotime($fecha);  //CREAR FECHA PARA TRABAJAR CON LAS FUNCIONES DE PHP
 
         if (is_bool($fechaFormateada) && !empty($fecha)) {
-            $mensajeError = " Formato incorrecto de fecha (Año-Mes-dia) (2000-01-01).";
+            $mensajeError = " Fecha incorrecta (dd-mm-yyyy) ";
         } else {
             if(!empty($fecha) && ($fechaFormateada < $fechaMinima) || ($fechaFormateada > $fechaMaxima)){
                 $mensajeError = " Por favor introduzca una fecha entre " . date('d/m/Y', $fechaMinima) . " y " . date('d/m/Y', $fechaMaxima) . ".";
@@ -284,7 +284,9 @@ class validacionFormularios {  //ELIMINA EL METODO VALIDATEDATE Y LO INCLUYE EN 
             $mensajeError = self::comprobarNoVacio($dni);
         }
         if(!is_numeric($letra) && is_numeric($numeros)){
-            if ((substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) != $letra || strlen($letra) != 1 || strlen($numeros) != 8) && !empty($dni)) {
+            if (((substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) != $letra && 
+                substr("trwagmyfpdxbnjzsqvhlcke", $numeros % 23, 1) != $letra) ||
+                 strlen($letra) != 1 || strlen($numeros) != 8) && !empty($dni)) {
                 $mensajeError = " El DNI no es válido.";
             }
         }else{

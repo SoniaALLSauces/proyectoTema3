@@ -33,6 +33,7 @@
                 'eApellido1' => null,
                 'eApellido2' => null,
                 'eDni' => null,
+                'eFechaNac' => null,
                 'eCurso' => null
                 );
             $aRespuestas = array(     //Array para guardar las entradas del formulario correctas
@@ -40,17 +41,22 @@
                 'apellido1' => null,
                 'apellido2' => null,
                 'dni' => null,
+                'fechaNac' => null,
                 'curso' => null
                 );
             
             //If si pulso enviar valido cada entrada con la libreria de validación importada 
             if (isset($_POST['submit'])){  //Pulso el boton enviar
+                //Valido cada campo y si hay algun error lo guardo en el array aErrores
                 $aErrores['eNombre']= validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 50, 1, 1);
                 $aErrores['eApellido1']= validacionFormularios::comprobarAlfabetico($_REQUEST['apellido1'], 50, 1, 1);
                 $aErrores['eApellido2']= validacionFormularios::comprobarAlfabetico($_REQUEST['apellido2'], 50, 1, 0);
                 $aErrores['eDni']= validacionFormularios::validarDni($_REQUEST['dni'], 1);
+                $fechaHoy= date('d-m-Y');
+                $aErrores['eFechaNac']= validacionFormularios::validarFecha($_REQUEST['fechaNac'],$fechaHoy, '01-01-1900', 1);
                 $aErrores['eCurso']= validacionFormularios::comprobarAlfabetico($_REQUEST['curso'], 10, 1, 1);
-                foreach ($aErrores as $campo => $error){  //Recorro array errores y compruebo si se ha incluido algún error
+                //Recorro array errores y compruebo si se ha incluido algún error
+                foreach ($aErrores as $campo => $error){  
                     if ($error!=null){                    //si es distinto de null
                         $entradaOK = false;               //si hay algun error entradaOK es false
                     }
@@ -59,6 +65,7 @@
             else{  //aun no se ha pulsado el boton enviar
                 $entradaOK = false;   // si no se pulsa enviar, entradaOK es false
             }
+            
             //If si las entradas del usuario son correctas o no
             if($entradaOK){  //Si todas las entradas son correctas
                 //Relleno array eRespuestas con los datos introducidos por el usuario:
@@ -66,8 +73,9 @@
                 $aRespuestas['apellido1'] = $_REQUEST['apellido1'];
                 $aRespuestas['apellido2'] = $_REQUEST['apellido2'];
                 $aRespuestas['dni'] = $_REQUEST['dni'];
+                $aRespuestas['fechaNac'] = strtotime($_REQUEST['fechaNac']);
                 $aRespuestas['curso'] = $_REQUEST['curso'];
-                
+                //Muestro el mensaje de datos correctos
                 echo "Datos sin errores";
                 echo "<p>" . $aRespuestas['nombre'] . " " . $aRespuestas['apellido1'] . " " .  $aRespuestas['apellido2'] . "</p>";
                 echo "<p>Curso matriculado: ".$_REQUEST['curso']."</p>";
@@ -78,10 +86,11 @@
                     <table>
                         <tr>
                             <td>
-                                <div class="dato"><label for="LbNombre">Nombre *</label></div>
+                                <div class="dato"><label for="LbNombre">Nombre  <span class="ast">*</span></label></div>
                                 <div class="datoUsu"><input type="text" name="nombre" id="LbNombre"
-                                       value="<?php if($aErrores['eNombre'] == NULL && isset($_POST['nombre'])) 
-                                                { echo $_POST['nombre'];}//Si no hay ningun error y se ha enviado mantenerlo?>"></div>
+                                       value="<?php  //Si no hay ningun error y se ha enviado mantenerlo
+                                                echo $resultado = ($aErrores['eNombre']==NULL && isset($_POST['nombre'])) ? $_POST['nombre'] : ""; 
+                                              ?>"></div>
                                 <div class="error"><?php
                                         if ($aErrores['eNombre'] != NULL) { //si hay errores muestra el mensaje
                                             echo "<span style=\"color:red;\">".$aErrores['eNombre']."</span>"; //aparece el mensaje de error que tiene el array aErrores
@@ -89,10 +98,11 @@
                                      ?></div>
                             </td>
                             <td>
-                                <div class="dato"><label for="LbApellido1">Primer apellido *</label></div>
+                                <div class="dato"><label for="LbApellido1">Primer apellido  <span class="ast">*</span></label></div>
                                 <div class="datoUsu"><input type="text" name="apellido1" id="LbApellido1"
-                                       value="<?php if($aErrores['eApellido1'] == NULL && isset($_POST['apellido1'])) 
-                                                { echo $_POST['apellido1'];}//Si no hay ningun error y se ha enviado mantenerlo?>"></div>
+                                       value="<?php  //Si no hay ningun error y se ha enviado mantenerlo
+                                                echo $resultado = ($aErrores['eApellido1']==NULL && isset($_POST['apellido1'])) ? $_POST['apellido1'] : ""; 
+                                              ?>"></div>
                                 <div class="error"><?php
                                         if ($aErrores['eApellido1'] != NULL) { //si hay errores muestra el mensaje
                                             echo "<span style=\"color:red;\">".$aErrores['eApellido1']."</span>"; //aparece el mensaje de error que tiene el array aErrores
@@ -102,8 +112,9 @@
                             <td>
                                 <div class="dato"><label for="LbApellido2">Segundo apellido</label></div>
                                 <div class="datoUsu"><input type="text" name="apellido2" id="LbApellido2"
-                                       value="<?php if($aErrores['eApellido2'] == NULL && isset($_POST['apellido2'])) 
-                                                { echo $_POST['apellido2'];}//Si no hay ningun error y se ha enviado mantenerlo?>"></div>
+                                       value="<?php  //Si no hay ningun error y se ha enviado mantenerlo
+                                                echo $resultado = ($aErrores['eApellido2']==NULL && isset($_POST['apellido2'])) ? $_POST['apellido2'] : ""; 
+                                              ?>"></div>
                                 <div class="error"><?php
                                         if ($aErrores['eApellido2'] != NULL) { //si hay errores muestra el mensaje
                                             echo "<span style=\"color:red;\">".$aErrores['eApellido2']."</span>"; //aparece el mensaje de error que tiene el array aErrores
@@ -113,18 +124,45 @@
                         </tr>
                         <tr>
                             <td>
-                                <div class="dato"><label for="LbDNI">D.N.I. *</label></div>
-                                <div class="datoUsu"><input type="text" name="dni" id="LbDNI"
-                                       value="<?php if($aErrores['eDni'] == NULL && isset($_POST['dni'])) 
-                                                { echo $_POST['dni'];}//Si no hay ningun error y se ha enviado mantenerlo?>"></div>
+                                <div class="dato"><label for="LbDNI">D.N.I.  <span class="ast">*</span></label></div>
+                                <div class="datoUsu"><input type="text" name="dni" id="LbDNI" placeholder="00000000X"
+                                       value="<?php  //Si no hay ningun error y se ha enviado mantenerlo
+                                                echo $resultado = ($aErrores['eDni']==NULL && isset($_POST['dni'])) ? $_POST['dni'] : ""; 
+                                              ?>"></div>
                                 <div class="error"><?php
                                         if ($aErrores['eDni'] != NULL) { //si hay errores muestra el mensaje
                                             echo "<span style=\"color:red;\">".$aErrores['eDni']."</span>"; //aparece el mensaje de error que tiene el array aErrores
                                         }
                                      ?></div>
                             </td>
+                            <td>
+                                <div class="dato"><label for="LbFechaNac">Fecha Nacimiento:</label></div>
+                                <div class="datoUsu"><input type="text" name="fechaNac" id="LbFechaDni" placeholder="dd-mm-yyyy"
+                                       value="<?php  //Si no hay ningun error y se ha enviado mantenerlo
+                                                echo $resultado = ($aErrores['eFechaNac']==NULL && isset($_POST['fechaNac'])) ? $_POST['fechaNac'] : ""; 
+                                              ?>"></div>
+                                <div class="error"><?php
+                                        if ($aErrores['eFechaNac'] != NULL) { //si hay errores muestra el mensaje
+                                            echo "<span style=\"color:red;\">".$aErrores['eFechaNac']."</span>"; //aparece el mensaje de error que tiene el array aErrores
+                                        }
+                                     ?></div>
+                            </td>
                         </tr>
                         <tr>
+                            <td>
+                                <div class="dato">Curso que estudias</div>
+                                <div>
+                                    <input type="radio" name="curso" id="LbCursoDAW" value="cursoDAW">
+                                    <label for="LbCursoDAW">DAW</label>
+                                    <input type="radio" name="curso" id="LbCursoDAM" value="cursoDAM">
+                                    <label for="LbCursoDAM">DAM</label>
+                                </div>
+                                <div class="error"><?php
+                                        if ($aErrores['eCurso'] != NULL) { //si hay errores muestra el mensaje
+                                            echo "<span style=\"color:red;\">".$aErrores['eCurso']."</span>"; //aparece el mensaje de error que tiene el array aErrores
+                                        }
+                                     ?></div>
+                            </td>
                             <td><label for="LbCurso">Curso que estudias</label></td>
                             <td><input type="text" name="curso" id="LbCurso"
                                        value="<?php if($aErrores['eCurso'] == NULL && isset($_POST['curso'])) 
@@ -137,6 +175,7 @@
                                 ?>
                             </td>
                         </tr>
+                        
                         <tr>
                             <td><input id="submit" name="submit" type="submit" value="Enviar"></td>
                             <td><input id="value" name="reset" type="reset" value="Borrar"></td>

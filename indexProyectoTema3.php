@@ -130,11 +130,16 @@
                         <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio23.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
                     </tr>
                     <tr class="tr">
-                        <td class="ejercicio">24. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la  misma página 
+                        <td class="ejercicio">Ejercicio 24. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la  misma página 
                             las preguntas y las respuestas recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario 
                             con el mensaje correspondiente, pero las respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.</td>
                         <td class="tdimg"><a href="codigoPHP/ejercicio24.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
                         <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio24.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="ejercicio">Ejercicio 25. Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros.</td>
+                        <td class="tdimg"><a href="codigoPHP/ejercicio25.php"><img src="webroot/images/ejecutar.png" alt="ejecutar"></a></td>
+                        <td class="tdimg"><a href="mostrarCodigo/muestraEjercicio25.php"><img src="webroot/images/mostrar.png" alt="mostrar"></a></td>
                     </tr>
                     
                     <tr>
