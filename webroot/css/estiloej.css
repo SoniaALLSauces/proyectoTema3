@@ -1,0 +1,89 @@
+/*
+Author: Sonia Anton Llanes
+Created on: 29-septiembre-2020
+Last modification: 29-septiembre-2020
+CSS Index General Segundo Curso del Módulo Desarrollo de Aplicaciones Web
+*/
+
+* { box-sizing: border-box; margin:0px; padding:0px;}
+ul, ol {list-style: none; }
+a{text-decoration: none; color:#000; }
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+
+
+/* Tamaño y posicion dentro del elemto */
+h2 img{
+    width: 4%;
+    text-align: left;
+}
+table{
+    width: 90%;
+    margin: 4%;
+}
+td{
+    width: 25%;
+    height: 60px;
+}
+div{margin: 8px;}
+.dato, .error{
+    width: 100%;
+    height: 10px;
+    font-size: 15px;
+}
+input{
+    width: 100%;
+    height: 25px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0 10px;
+}
+#submit, #value{
+    border: 1px solid black;
+}
+
+/* Border, Margin y Padding */
+h2, h3{
+    margin: 1% 3%;
+}
+.php{
+    margin: 1% 3%;
+    border: 1px solid #BF2411;
+    padding: 1%;
+}
+p{
+    margin-left: 2%;
+}
+.label{
+    margin: 1%;
+}
+input{
+    margin-left: 1%;
+}
+
+/* Estilo del texto */
+h2{
+    color: #bb1212;
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    font-weight: bolder;
+    vertical-align: middle;
+}
+h3{
+    font-family: 'Secular One', sans-serif;
+    font-size: 20px;
+}
+h4{
+    font-size: 20px;
+}
+.ast{
+    color: #bb1212;
+}
+
+
+

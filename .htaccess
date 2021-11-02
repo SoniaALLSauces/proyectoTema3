@@ -1,0 +1,6 @@
+DirectoryIndex indexProyectoTema3.php
+
+Redirect 301 /proyectoTema3/google.html https://www.google.es/
+
+RewriteEngine on
+RewriteCond% ^ www.
